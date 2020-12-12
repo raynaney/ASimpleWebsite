@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital@0;1&family=Oswald:wght@200;300;400;500;600;700&display=swap");
+
+h1 {
+  font-family: "Oswald", sans-serif;
+}
+
+h2 {
+  font-family: "Courier Prime", monospace;
+}
+
+h3 {
+  font-family: "Courier Prime", monospace;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #e5e5e5;
+}
+.text-container {
+  display: flex;
+  flex-direction: column;
+}
