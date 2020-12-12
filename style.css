@@ -13,6 +13,8 @@ h5 {
 }
 
 body {
+  font-family: "Oswald", sans-serif;
+  font-family: "Courier Prime", monospace;
   display: flex;
   flex-direction: column;
   background-color: #e5e5e5;
