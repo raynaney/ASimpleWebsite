@@ -22,22 +22,12 @@
 			<div class = "circle" id="resume"  onclick="expandCircleResume()">
 				<div class = "fixed-text" id="resume-text"> resume </div>
 			</div>
-			<a href="#">
-				<div class = "circle" id="contact"  onclick="expandCircleContact()">
-					<div class = "fixed-text" id="contact-text">  contact </div>
-				</div>
-			</a>
+			<div class = "circle" id="contact"  onclick="expandCircleContact()">
+				<div class = "fixed-text" id="contact-text">  contact </div>
+			</div>
 		</div>
 	</div>
 	<script>
-		setTimeout(function(){ 
-			document.getElementById("resume").style.visibility = "visible";
-		}, 400);
-		setTimeout(function(){ 
-			document.getElementById("contact").style.visibility = "visible";
-		}, 820);
-		// document.getElementById("contact").addEventListener("click", expandCircle(), false);
-	
 		function expandCircleContact() {
 			document.getElementById("contact-text").classList.add("hidden");
 			document.getElementById("contact").classList.add("full-page-circle");

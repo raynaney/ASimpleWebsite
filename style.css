@@ -75,14 +75,12 @@ body {
   background-repeat: no-repeat;
   background-size: 260px;
   background-position: center;
-  visibility: hidden;
 }
 #contact {
   background-image: url(./backgrounds/color\ wall.jpg);
   background-repeat: no-repeat;
   background-size: 269px;
   background-position: center;
-  visibility: hidden;
 }
 
 .fixed-text {
@@ -183,7 +181,7 @@ div.circle-container {
   justify-content: center;
   height: 100%;
 }
-.circle#project {
+/* .circle#project {
   background-color: #bbb;
   animation-name: slide-in-bottom;
   animation-duration: 1s;
@@ -209,6 +207,15 @@ div.circle-container {
   animation-duration: 1s;
   animation-timing-function: ease;
   animation-delay: 0.8s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+} */
+.circle-container {
+  animation-name: slide-in-bottom;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
   animation-iteration-count: 1;
   animation-direction: normal;
   animation-fill-mode: none;
