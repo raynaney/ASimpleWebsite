@@ -2,24 +2,57 @@
 <html>
 
 <head>
-	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="reset.css">
+	<link rel="stylesheet" href="style.css">
 	<title>Website of Rayna Ney</title>
 	<meta charset="utf-8"  />
 </head>
 
 <body>
 	<div class= "flex-container">
-		<div class = "text-container">
+		<div class = "text-container" id = "text-container">
 			<h4>Hi, I'm</h4>
 			<h1>Rayna Ney</h1>
 			<h5>(Pronounced RAY-nah nye)</h5>
 		</div>
-		<div class="circle-container">
-			<div class = "circle-projects"></div>
-			<div class = "circle-resume"></div>
-			<div class = "circle-contact"></div>
+		<div class="circle-container" id="circle-container">
+			<div class = "circle" id="project">
+				<div class = "fixed-text" id="project-text"> projects </div>
+			</div>
+			<div class = "circle" id="resume">
+				<div class = "fixed-text" id="resume-text"> resume </div>
+			</div>
+			<a href="#">
+				<div class = "circle" id="contact"  onclick="expandCircleContact()">
+					<div class = "fixed-text" id="contact-text">  contact </div>
+				</div>
+			</a>
 		</div>
 	</div>
+	<script>
+		setTimeout(function(){ 
+			document.getElementById("resume").style.visibility = "visible";
+		}, 400);
+		setTimeout(function(){ 
+			document.getElementById("contact").style.visibility = "visible";
+		}, 820);
+		// document.getElementById("contact").addEventListener("click", expandCircle(), false);
+	
+		function expandCircleContact() {
+			document.getElementById("contact").classList.add("full-page-circle");
+			document.getElementById("contact").style.margin = "0";
+			document.getElementById("contact").style.backgroundSize = "100%";
+			document.getElementById("circle-container").style.margin = "0";
+			hideRestofPage("text-container");
+			hideRestofPage("resume");
+			hideRestofPage("project");
+		};
+
+		function hideRestofPage(element){
+			document.getElementById(element).classList.add("hidden");
+		}
+		
+	</script>
 </body>
+
 </html>

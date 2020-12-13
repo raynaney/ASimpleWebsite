@@ -2,13 +2,19 @@
 
 h1 {
   font-family: "Oswald", sans-serif;
+  font-size: 60px;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
 }
 
 h4 {
+  font-weight: 100;
+  line-height: 0.1;
   font-family: "Courier Prime", monospace;
 }
 
 h5 {
+  font-weight: 100;
   font-family: "Courier Prime", monospace;
 }
 html,
@@ -20,13 +26,239 @@ body {
   font-family: "Courier Prime", monospace;
   flex-direction: column;
   background-color: #e5e5e5;
+  display: flex;
+  justify-content: center;
 }
 
 .text-container {
   display: flex;
   flex-direction: column;
+  text-align: center;
+  margin-bottom: 50px;
+  min-height: 100px;
 }
 
 .flex-container {
+  align-self: center;
   display: flex;
+  flex-direction: column;
+}
+
+.circle-container {
+  margin-top: 20px;
+  flex-direction: row;
+  display: flex;
+}
+
+.circle {
+  border-radius: 50%;
+  width: 190px;
+  height: 190px;
+  background: gray;
+  margin: 25px;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.55);
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+}
+
+#project {
+  background-image: url(./backgrounds/brick.jpg);
+  background-repeat: no-repeat;
+  background-size: 200px;
+  background-position: center;
+}
+#resume {
+  background-image: url(./backgrounds/brick\ 2.jpg);
+  background-repeat: no-repeat;
+  background-size: 260px;
+  background-position: center;
+  visibility: hidden;
+}
+#contact {
+  background-image: url(./backgrounds/color\ wall.jpg);
+  background-repeat: no-repeat;
+  background-size: 269px;
+  background-position: center;
+  visibility: hidden;
+}
+
+.fixed-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 600;
+  transition: box-shadow 0.3s ease-in-out;
+  font-size: 23px;
+}
+
+.circle:hover {
+  box-shadow: inset 2px 7px 11px 7px rgba(0, 0, 0, 0.5);
+  -webkit-transition: background-position 1s ease;
+  background-size: 150px;
+  top: 0px;
+  left: 0px;
+}
+
+#project:hover {
+  -webkit-transition: background-position 1s ease;
+  background-size: 400px;
+  position: relative;
+  animation-delay: 0s;
+  -webkit-transition-duration: 0.5s;
+  -webkit-transition-property: all;
+  -webkit-transition-timing-function: ease-in-out;
+}
+#resume:hover {
+  -webkit-transition: background-position 1s ease;
+  background-size: 400px;
+  position: relative;
+  animation-delay: 0s;
+  -webkit-transition-duration: 0.5s;
+  -webkit-transition-property: all;
+  -webkit-transition-timing-function: ease-in-out;
+}
+
+#contact:hover {
+  background-size: 400px;
+  position: relative;
+  animation-delay: 0s;
+  -webkit-transition-duration: 0.5s;
+  -webkit-transition-property: all;
+  -webkit-transition-timing-function: ease-in-out;
+}
+
+/* ********ANIMATIONS*********** */
+
+div.text-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+h1 {
+  animation-name: focus-in-contract;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+}
+h4 {
+  animation-name: focus-in-contract;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+}
+h5 {
+  animation-name: focus-in-contract;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+}
+@keyframes focus-in-contract {
+  0% {
+    letter-spacing: 1em;
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+div.circle-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.circle#project {
+  background-color: #bbb;
+  animation-name: slide-in-bottom;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+}
+.circle#resume {
+  background-color: #bbb;
+  animation-name: slide-in-bottom;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-delay: 0.4s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+}
+.circle#contact {
+  background-color: #bbb;
+  animation-name: slide-in-bottom;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-delay: 0.8s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+}
+@keyframes slide-in-bottom {
+  0% {
+    -webkit-transform: translateY(1000px);
+    transform: translateY(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+div#project {
+  position: relative;
+  animation-delay: 0s;
+  -webkit-transition-duration: 0.5s;
+  -webkit-transition-property: all;
+  -webkit-transition-timing-function: ease-in-out;
+}
+
+div#resume {
+  position: relative;
+  animation-delay: 0s;
+  -webkit-transition-duration: 0.5s;
+  -webkit-transition-property: all;
+  -webkit-transition-timing-function: ease-in-out;
+}
+div#contact {
+  position: relative;
+  animation-delay: 0s;
+  -webkit-transition-duration: 0.5s;
+  -webkit-transition-property: all;
+  -webkit-transition-timing-function: ease-in-out;
+}
+
+.full-page-circle {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  margin-top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin-left: 0;
+  border-radius: 0;
+  background-color: yellow;
+}
+.hidden {
+  display: none !important;
 }
