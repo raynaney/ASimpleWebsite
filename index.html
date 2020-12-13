@@ -59,7 +59,7 @@
 			document.getElementById("resume").style.margin = "0";
 			document.getElementById("resume").style.backgroundSize = "100%";
 			document.getElementById("circle-container").style.margin = "0";
-			hideRestofPageLeft("text-container");
+			hideRestofPageUp("text-container");
 			hideRestofPageLeft("project");
 			hideRestofPageRight("contact");
 			setTimeout(function(){ 
@@ -71,19 +71,26 @@
 			document.getElementById(element).classList.add("slide-left");
 			setTimeout(function(){ 
 				document.getElementById(element).style.display = "none";
-		}, 500);
-		}
+			}, 500);
+		};
 
 		function hideRestofPageRight(element){
 			document.getElementById(element).classList.add("slide-right");
 			setTimeout(function(){ 
 				document.getElementById(element).style.display = "none";
-		}, 500);
+			}, 500);
 		}
+
+		function hideRestofPageUp(element){
+			document.getElementById(element).classList.add("slide-up");
+			setTimeout(function(){ 
+				document.getElementById(element).style.display = "none";
+			}, 500);
+		};
 		
-		function addResumeContents(){
-			
-		}
+		// function addResumeContents(){
+
+		// }
 	</script>
 </body>
 

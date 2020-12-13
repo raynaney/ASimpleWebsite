@@ -327,3 +327,24 @@ div#contact {
     opacity: 1;
   }
 }
+
+#text-container.slide-up {
+  animation-name: slide-out-up;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-direction: normal;
+  animation-fill-mode: none;
+}
+@keyframes slide-out-up {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(-1000px);
+    transform: translateY(-1000px);
+    opacity: 1;
+  }
+}
