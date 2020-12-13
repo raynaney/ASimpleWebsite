@@ -48,6 +48,8 @@ body {
   margin-top: 20px;
   flex-direction: row;
   display: flex;
+  /* -webkit-flex: 1 0 auto;
+  -webkit-transition: -webkit-flex 250ms linear; */
 }
 
 .circle {
@@ -257,8 +259,71 @@ div#contact {
   bottom: 0;
   margin-left: 0;
   border-radius: 0;
-  background-color: yellow;
 }
 .hidden {
   display: none !important;
+  transition-timing-function: ease-in;
+}
+
+#resume.slide-left {
+  animation-name: slide-out-left;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-direction: normal;
+  animation-fill-mode: none;
+}
+@keyframes slide-out-left {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(-1000px);
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+}
+
+#project.slide-left {
+  animation-name: slide-out-left;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-direction: normal;
+  animation-fill-mode: none;
+}
+@keyframes slide-out-left {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(-1000px);
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+}
+
+#contact.slide-right {
+  animation-name: slide-out-right;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-direction: normal;
+  animation-fill-mode: none;
+}
+@keyframes slide-out-right {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 1;
+  }
 }

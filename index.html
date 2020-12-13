@@ -19,7 +19,7 @@
 			<div class = "circle" id="project">
 				<div class = "fixed-text" id="project-text"> projects </div>
 			</div>
-			<div class = "circle" id="resume">
+			<div class = "circle" id="resume"  onclick="expandCircleResume()">
 				<div class = "fixed-text" id="resume-text"> resume </div>
 			</div>
 			<a href="#">
@@ -39,19 +39,51 @@
 		// document.getElementById("contact").addEventListener("click", expandCircle(), false);
 	
 		function expandCircleContact() {
+			document.getElementById("contact-text").classList.add("hidden");
 			document.getElementById("contact").classList.add("full-page-circle");
 			document.getElementById("contact").style.margin = "0";
 			document.getElementById("contact").style.backgroundSize = "100%";
 			document.getElementById("circle-container").style.margin = "0";
-			hideRestofPage("text-container");
-			hideRestofPage("resume");
-			hideRestofPage("project");
+			hideRestofPageLeft("text-container");
+			hideRestofPageLeft("resume");
+			hideRestofPageLeft("project");
+			document.getElementById("contact").classList.add("slide-left");
+			setTimeout(function(){ 
+				document.getElementById(element).style.visibility = "hidden";
+		}, 500);
 		};
 
-		function hideRestofPage(element){
-			document.getElementById(element).classList.add("hidden");
+		function expandCircleResume() {
+			document.getElementById("resume-text").classList.add("hidden");
+			document.getElementById("resume").classList.add("full-page-circle");
+			document.getElementById("resume").style.margin = "0";
+			document.getElementById("resume").style.backgroundSize = "100%";
+			document.getElementById("circle-container").style.margin = "0";
+			hideRestofPageLeft("text-container");
+			hideRestofPageLeft("project");
+			hideRestofPageRight("contact");
+			setTimeout(function(){ 
+				document.getElementById(element).style.visibility = "hidden";
+		}, 500);
+		};
+
+		function hideRestofPageLeft(element){
+			document.getElementById(element).classList.add("slide-left");
+			setTimeout(function(){ 
+				document.getElementById(element).style.display = "none";
+		}, 500);
+		}
+
+		function hideRestofPageRight(element){
+			document.getElementById(element).classList.add("slide-right");
+			setTimeout(function(){ 
+				document.getElementById(element).style.display = "none";
+		}, 500);
 		}
 		
+		function addResumeContents(){
+			
+		}
 	</script>
 </body>
 
