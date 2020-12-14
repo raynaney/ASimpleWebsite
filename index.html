@@ -9,25 +9,65 @@
 </head>
 
 <body>
-	<div class= "flex-container">
-		<div class = "text-container" id = "text-container">
-			<h4>Hi, I'm</h4>
-			<h1>Rayna Ney</h1>
-			<h5>(A Web Developer)</h5>
-		</div>
-		<div class="circle-container" id="circle-container">
-			<div class = "circle" id="project">
-				<div class = "fixed-text" id="project-text"> projects </div>
+	<scroll-behavior>
+		<scroll-page class= "flex-container">
+			<div class = "text-container" id = "text-container">
+				<h4>Hi, I'm</h4>
+				<h1>Rayna Ney</h1>
+				<h5>(A Web Developer)</h5>
 			</div>
-			<div class = "circle" id="resume"  onclick="expandCircleResume()">
-				<div class = "fixed-text" id="resume-text"> resume </div>
+			<div class="circle-container" id="circle-container">
+				<a href="#projects-page" onclick='displayPage("projects-page")'>
+					<div class = "circle" id="project">
+						<div class = "fixed-text" id="project-text"> projects </div>
+					</div>
+				</a>
+				<a href="#aboutme-page" onclick='displayPage("aboutme-page")'>
+					<div class = "circle" id="resume" >
+						<div class = "fixed-text" id="resume-text"> about me </div>
+					</div>
+				</a>
+				<div class = "circle" id="contact">
+					<div class = "fixed-text" id="contact-text">  contact </div>
+				</div>
 			</div>
-			<div class = "circle" id="contact"  onclick="expandCircleContact()">
-				<div class = "fixed-text" id="contact-text">  contact </div>
+		</scroll-page>
+		<scroll-page class= "flex-container" id ="aboutme-page">
+			<!-- on hover, have colorful lines raditing from header box -->
+			<div class = outer-container>
+				<div class = "about-header"> 
+					<h2 class = "header-text">Web Developer</h2>
+				</div>
+				<div class="flexbox-row">
+					<div class="flexbox-column">
+						<div class="skill-item"><h3 class = "skill-text">Skills</h3></div>
+						<div class="skill-item"><h3 class = "skill-text">Front End</h3></div>
+						<div class="skill-item"><h3 class = "skill-text">Back End</h3></div>
+						<div class="skill-item"><h3 class = "skill-text">Soft</h3></div>
+					</div>
+					<div class="bio">
+						<h3 class = "skill-text">Bio</h3>
+					</div>
+				</div>
 			</div>
-		</div>
-	</div>
+		</scroll-page>
+		<scroll-page class= "flex-container" id ="projects-page"></scroll-page>
+		<!-- <scroll-page class= "flex-container" id ="project-page"></scroll-page> -->
+	</scroll-behavior>
+	
+	
 	<script>
+		function displayPage(element){
+			document.getElementById(element).style.display = "flex";
+			setTimeout(function(){ 
+
+			}, 500);
+		}
+
+		function displayElements(){
+			//display elements as expanding from 0 to proper size, growing blob effect
+
+		}
 		function expandCircleContact() {
 			document.getElementById("contact-text").classList.add("hidden");
 			document.getElementById("contact").classList.add("full-page-circle");
