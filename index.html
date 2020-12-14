@@ -35,18 +35,19 @@
 		<scroll-page class= "flex-container" id ="aboutme-page">
 			<!-- on hover, have colorful lines raditing from header box -->
 			<div class = outer-container>
-				<div class = "about-header"> 
-					<h2 class = "header-text">Web Developer</h2>
+				<div class = "about-header" onmouseover="show()"> 
+					<h2 class = "header-text" id="header-text">About Me</h2>
 				</div>
 				<div class="flexbox-row">
 					<div class="flexbox-column">
-						<div class="skill-item"><h3 class = "skill-text">Skills</h3></div>
+						<div class="skill-item" id ="skill-header" onmouseenter="showSkillText()"  onmouseleave="hideSkillText()"><h3 class = "skill-text" id="skill-header-text">Skills</h3></div>
 						<div class="skill-item"><h3 class = "skill-text">Front End</h3></div>
 						<div class="skill-item"><h3 class = "skill-text">Back End</h3></div>
 						<div class="skill-item"><h3 class = "skill-text">Soft</h3></div>
 					</div>
-					<div class="bio">
-						<h3 class = "skill-text">Bio</h3>
+					<div class="bio" id="bio" onmouseenter="showBioText()"  onmouseleave="hideBioText()">
+						<h3 class = "skill-text" id="bio-label">Bio</h3>
+						<div id="bio-sub-label">(see more)</div>
 					</div>
 				</div>
 			</div>
@@ -57,11 +58,31 @@
 	
 	
 	<script>
-		function displayPage(element){
-			document.getElementById(element).style.display = "flex";
+		function showSkillText(){
 			setTimeout(function(){ 
+				document.getElementById("skill-header").style.backgroundPosition = "100% 0";
+				document.getElementById("skill-header-text").style.display = "none";
+				// document.getElementById("bio-sub-label").style.display = "none";
+			}, 2000);
+		}
+		function showBioText(){
+			setTimeout(function(){ 
+				document.getElementById("bio").style.backgroundPosition = "100% 0";
+				document.getElementById("bio-label").style.display = "none";
+				document.getElementById("bio-sub-label").style.display = "none";
+			}, 2000);
+		}
+		function hideBioText(){
+			setTimeout(function(){ 
+				// document.getElementById("bio").style.backgroundPosition = "0 0";
+			}, 2000);
+		}
+		function displayElement(element){
+			document.getElementById(element).style.display = "flex";
+		}
 
-			}, 500);
+		function hide(element){
+			document.getElementById(element).style.display = "none";
 		}
 
 		function displayElements(){

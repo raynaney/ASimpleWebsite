@@ -130,11 +130,11 @@ a {
 }
 
 .about-header {
-  background-color: #fafafa;
-  padding: 13px 30px;
+  background-image: url(./backgrounds/paperbackground.jpg);
+  height: 10vh;
+  align-items: center;
   border-radius: 10px;
   display: flex;
-  justify-self: center;
   justify-content: center;
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.55);
   width: 30%;
@@ -155,15 +155,17 @@ a {
 .flexbox-row {
   display: flex;
   flex-direction: row;
-  width: 90vw;
+  width: 80vw;
   justify-content: space-evenly;
 }
 
 .skill-item {
-  background-color: #fafafa;
+  background-image: url(./backgrounds/paperbackground.jpg);
   margin-bottom: 30px;
   padding: 14px 30px;
   width: 100%;
+  height: 4vh;
+  align-items: center;
   border-radius: 5px;
   display: flex;
   justify-self: center;
@@ -171,17 +173,24 @@ a {
   box-shadow: inset 0px 3px 3px rgba(0, 0, 0, 0.45);
 }
 .bio {
-  background-color: #fafafa;
-  padding: 10px 30px;
+  background-image: url(./backgrounds/paperbackground.jpg);
+  padding: 30px 30px;
   width: 20vw;
   border-radius: 10px;
   display: flex;
-  height: 40vh;
+  height: 20vw;
   justify-self: center;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.55);
+  overflow: hidden;
 }
+
+#bio-sub-label {
+  margin-top: 10px;
+}
+
 .skill-text {
   font-family: "Oswald", sans-serif;
   font-size: 25px;
@@ -486,5 +495,74 @@ div#contact {
     -webkit-transform: translateY(-1000px);
     transform: translateY(-1000px);
     opacity: 1;
+  }
+}
+
+.bio:hover #bio-label {
+  animation-name: slide-out-left;
+  animation-duration: 4s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-direction: normal;
+  animation-fill-mode: none;
+}
+#skill-header:hover #skill-header-text {
+  animation-name: slide-out-left;
+  animation-duration: 4s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-direction: normal;
+  animation-fill-mode: none;
+}
+@keyframes slide-out-left {
+  0% {
+    z-index: 0;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    z-index: -3;
+    -webkit-transform: translateX(-1000px);
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+}
+.skill-item {
+  overflow: hidden;
+}
+#bio-sub-label {
+  margin-top: 10px;
+}
+.bio:hover #bio-sub-label {
+  animation-name: slide-out-left;
+  animation-duration: 4s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-direction: normal;
+  animation-fill-mode: none;
+}
+.bio:hover {
+  animation-name: animatedBackground;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-direction: normal;
+  animation-fill-mode: none;
+}
+#skill-header:hover {
+  animation-name: animatedBackground;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-direction: normal;
+  animation-fill-mode: none;
+}
+@keyframes animatedBackground {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 0;
   }
 }
