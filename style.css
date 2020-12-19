@@ -125,7 +125,6 @@ a {
   background-position: center;
   background-size: 100%;
   height: 100vh;
-  /* display: none; */
   align-items: center;
 }
 
@@ -162,7 +161,7 @@ a {
 .skill-item {
   background-image: url(./backgrounds/paperbackground.jpg);
   margin-bottom: 30px;
-  padding: 14px 30px;
+  padding: 10px 2px;
   width: 100%;
   height: 4vh;
   align-items: center;
@@ -176,6 +175,7 @@ a {
   background-image: url(./backgrounds/paperbackground.jpg);
   padding: 30px 30px;
   width: 20vw;
+  margin-left: 80px;
   border-radius: 10px;
   display: flex;
   height: 20vw;
@@ -196,16 +196,12 @@ a {
   font-size: 25px;
 }
 #projects-page {
-  background: linear-gradient(
-      to top,
-      rgba(255, 255, 255, 0) 30%,
-      rgb(229 229 229)
-    ),
-    url(./backgrounds/brick.jpg);
+  background: url(./backgrounds/brick.jpg);
   background-repeat: no-repeat;
+  background-position: top;
   background-size: 100%;
-  height: 100%;
-  display: none;
+  height: 100vh;
+  align-items: center;
 }
 .circle:hover {
   box-shadow: inset 2px 7px 11px 7px rgba(0, 0, 0, 0.5);
@@ -289,39 +285,12 @@ h5 {
     opacity: 1;
   }
 }
-/* =========TYPEWRITER EFFECT =========== */
 
 div.circle-container {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
-/* .about-header {
-  width: 100px;
-  height: 100px;
-  background-color: #ffe672;
-  animation-name: slide-in-top;
-  animation-duration: 1s;
-  animation-timing-function: ease;
-  animation-delay: 0s;
-  animation-iteration-count: 1;
-  animation-direction: normal;
-  animation-fill-mode: none;
-}
-
-@keyframes slide-in-top {
-  0% {
-    -webkit-transform: translateY(-1000px);
-    transform: translateY(-1000px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-    opacity: 1;
-  }
-} */
 
 /* .circle#project {
   background-color: #bbb;
@@ -497,22 +466,93 @@ div#contact {
     opacity: 1;
   }
 }
+#bio-label {
+  animation-name: slide-in-bottom;
+}
+
+#bio-sub-label {
+  animation-name: slide-in-bottom;
+}
+
+@keyframes slide-in-bottom {
+  0% {
+    -webkit-transform: translateY(1000px);
+    transform: translateY(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
 .bio:hover #bio-label {
-  animation-name: slide-out-left;
-  animation-duration: 4s;
+  animation-name: slide-out-bottom;
+  animation-duration: 3s;
   animation-timing-function: ease;
   animation-delay: 0s;
+  animation-iteration-count: 1;
   animation-direction: normal;
   animation-fill-mode: none;
+  animation-fill-mode: forwards;
+}
+.bio:hover #bio-sub-label {
+  animation-name: slide-out-bottom;
+  animation-duration: 3s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-fill-mode: forwards;
+}
+@keyframes slide-out-bottom {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(1000px);
+    transform: translateY(1000px);
+    opacity: 0;
+  }
+}
+#bio-info {
+  display: none;
+}
+
+.bio:hover #bio-info {
+  animation-name: slide-in-top;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-1000px);
+    transform: translateY(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 #skill-header:hover #skill-header-text {
-  animation-name: slide-out-left;
+  /* animation-name: slide-out-left;
   animation-duration: 4s;
   animation-timing-function: ease;
   animation-delay: 0s;
   animation-direction: normal;
-  animation-fill-mode: none;
+  animation-fill-mode: none; */
 }
 @keyframes slide-out-left {
   0% {
@@ -535,34 +575,101 @@ div#contact {
   margin-top: 10px;
 }
 .bio:hover #bio-sub-label {
-  animation-name: slide-out-left;
+  /* animation-name: slide-out-left;
   animation-duration: 4s;
   animation-timing-function: ease;
   animation-delay: 0s;
   animation-direction: normal;
-  animation-fill-mode: none;
+  animation-fill-mode: none; */
+}
+.bio {
+  position: relative;
+  animation-delay: 0s;
+  -webkit-transition-duration: 1s;
+  -webkit-transition-property: all;
+  -webkit-transition-timing-function: ease-in-out;
 }
 .bio:hover {
-  animation-name: animatedBackground;
-  animation-duration: 2s;
-  animation-timing-function: ease;
+  width: 50vw;
+}
+
+#skill-column {
+  white-space: nowrap;
+  position: relative;
   animation-delay: 0s;
-  animation-direction: normal;
-  animation-fill-mode: none;
+  -webkit-transition-duration: 0.5s;
+  -webkit-transition-property: all;
+  -webkit-transition-timing-function: ease-in-out;
+}
+/* .flexbox-column {
+  width: 10vw;
+} */
+#skill-header {
+  position: relative;
+  animation-delay: 0s;
+  -webkit-transition-duration: 1s;
+  -webkit-transition-property: all;
+  -webkit-transition-timing-function: ease-in-out;
 }
 #skill-header:hover {
-  animation-name: animatedBackground;
-  animation-duration: 2s;
-  animation-timing-function: ease;
-  animation-delay: 0s;
-  animation-direction: normal;
-  animation-fill-mode: none;
+  /* width: 25vw; */
+  width: 36vw;
 }
-@keyframes animatedBackground {
+
+/* @keyframes animatedBackground {
   from {
     background-position: 0 0;
   }
   to {
     background-position: 100% 0;
   }
+} */
+.alt {
+  display: none;
+}
+#skill-header-text.alt {
+  margin-right: 300px;
+}
+#skill-header-info {
+  font-size: 15px;
+  font-weight: 100;
+  font-family: "Courier Prime", monospace;
+}
+#skill-header:hover #skill-header-text {
+  animation-name: slide-out-left;
+  animation-duration: 3s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-fill-mode: forwards;
+}
+#skill-header:hover .alt {
+  animation-name: slide-in-right;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+}
+@keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+div#contact {
+  position: relative;
+  animation-delay: 0s;
+  -webkit-transition-duration: 0.5s;
+  -webkit-transition-property: all;
+  -webkit-transition-timing-function: ease-in-out;
 }

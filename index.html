@@ -39,15 +39,30 @@
 					<h2 class = "header-text" id="header-text">About Me</h2>
 				</div>
 				<div class="flexbox-row">
-					<div class="flexbox-column">
-						<div class="skill-item" id ="skill-header" onmouseenter="showSkillText()"  onmouseleave="hideSkillText()"><h3 class = "skill-text" id="skill-header-text">Skills</h3></div>
+					<div class="flexbox-column" id="skill-column">
+						<div class="skill-item" id ="skill-header" onmouseenter="showSkillText()"  onmouseleave="hideSkillText()">
+							<h3 class = "skill-text" id="skill-header-text">Skills</h3>
+							<h3 class = "skill-text alt" id="skill-header-info">Below are some of my web developer skills: </h3>
+						</div>
 						<div class="skill-item"><h3 class = "skill-text">Front End</h3></div>
 						<div class="skill-item"><h3 class = "skill-text">Back End</h3></div>
-						<div class="skill-item"><h3 class = "skill-text">Soft</h3></div>
+						<div class="skill-item"><h3 class = "skill-text">Other</h3>	<h3 class = "skill-text alt">Hard: Git, Figma, iMovie. Soft: Teamwork, Adaptability</h3></div>
+
 					</div>
 					<div class="bio" id="bio" onmouseenter="showBioText()"  onmouseleave="hideBioText()">
+						<h3  id="bio-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+							sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+							ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+							in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+							sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+							mollit anim id est laborum. orem ipsum dolor sit amet, consectetur adipiscing elit, 
+							sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+						    ut aliquip ex ea commodo consequat.</h3>
 						<h3 class = "skill-text" id="bio-label">Bio</h3>
-						<div id="bio-sub-label">(see more)</div>
+						<div  id="bio-sub-label">(see more)</div>
+
 					</div>
 				</div>
 			</div>
@@ -59,23 +74,29 @@
 	
 	<script>
 		function showSkillText(){
+			document.getElementById("skill-header-info").style.display= "block";
 			setTimeout(function(){ 
-				document.getElementById("skill-header").style.backgroundPosition = "100% 0";
-				document.getElementById("skill-header-text").style.display = "none";
-				// document.getElementById("bio-sub-label").style.display = "none";
-			}, 2000);
+				document.getElementById("bio").style.width = "15vw";
+			}, 0);
+		}
+		function hideSkillText(){
+			setTimeout(function(){ 
+			// document.getElementById("bio-label").translateY="1000";
+		}, 3000);
 		}
 		function showBioText(){
 			setTimeout(function(){ 
-				document.getElementById("bio").style.backgroundPosition = "100% 0";
-				document.getElementById("bio-label").style.display = "none";
-				document.getElementById("bio-sub-label").style.display = "none";
-			}, 2000);
+				document.getElementById("skill-column").style.width = "10vw";
+			}, 0);
+			setTimeout(function(){ 
+				document.getElementById("bio-info").style.display= "block";
+			}, 300);
 		}
 		function hideBioText(){
 			setTimeout(function(){ 
-				// document.getElementById("bio").style.backgroundPosition = "0 0";
-			}, 2000);
+				document.getElementById("skill-column").style.width = "20vw";
+			}, 0);
+			document.getElementById("bio-info").style.display= "none";
 		}
 		function displayElement(element){
 			document.getElementById(element).style.display = "flex";
