@@ -40,7 +40,9 @@ a {
   text-decoration: none;
   color: black;
 }
-
+/* #home-page{
+  height: 100vh;
+} */
 .text-container {
   display: flex;
   flex-direction: column;
@@ -194,15 +196,9 @@ a {
 .skill-text {
   font-family: "Oswald", sans-serif;
   font-size: 25px;
+  text-align: center;
 }
-#projects-page {
-  background: url(./backgrounds/brick.jpg);
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: 100%;
-  height: 100vh;
-  align-items: center;
-}
+
 .circle:hover {
   box-shadow: inset 2px 7px 11px 7px rgba(0, 0, 0, 0.5);
   -webkit-transition: background-position 1s ease;
@@ -633,6 +629,7 @@ div#contact {
 #skill-header-info {
   font-size: 15px;
   font-weight: 100;
+  text-align: center;
   font-family: "Courier Prime", monospace;
 }
 #skill-header:hover #skill-header-text {
@@ -672,4 +669,57 @@ div#contact {
   -webkit-transition-duration: 0.5s;
   -webkit-transition-property: all;
   -webkit-transition-timing-function: ease-in-out;
+}
+
+/* =================== PROJECTS PAGE =====================*/
+#projects-page {
+  background: url(./backgrounds/brick.jpg);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 100%;
+  height: 100vh;
+  align-items: center;
+  flex-direction: row;
+}
+
+.project-panel{
+  width: 100%;
+  padding-top: 27%;
+  background-color: orange;
+  border-radius: 15px;
+  margin-left: 4.6%;
+  margin-right: 4.6%;
+  box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.66);
+}
+
+#bit-project{
+  background-image: url(./backgrounds/BitProjectwithBackground.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#fiu{
+  background-image: url(./backgrounds/FIUwithBackground.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#video-valet{
+  background-image: url(./backgrounds/VideoValetwithBckd.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* =================== CONTACT PAGE =====================*/
+
+#contactme-page{
+  background: url(./backgrounds/brick\ 2.jpg);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 100%;
+  height: 100vh;
+  align-items: center;
 }

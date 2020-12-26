@@ -10,7 +10,7 @@
 
 <body>
 	<scroll-behavior>
-		<scroll-page class= "flex-container">
+		<scroll-page class= "flex-container" id="home-page">
 			<div class = "text-container" id = "text-container">
 				<h4>Hi, I'm</h4>
 				<h1>Rayna Ney</h1>
@@ -27,15 +27,17 @@
 						<div class = "fixed-text" id="resume-text"> about me </div>
 					</div>
 				</a>
-				<div class = "circle" id="contact">
-					<div class = "fixed-text" id="contact-text">  contact </div>
-				</div>
+				<a href="#contactme-page">
+					<div class = "circle" id="contact">
+						<div class = "fixed-text" id="contact-text">  contact </div>
+					</div>
+				</a>
 			</div>
 		</scroll-page>
 		<scroll-page class= "flex-container" id ="aboutme-page">
 			<!-- on hover, have colorful lines raditing from header box -->
 			<div class = outer-container>
-				<div class = "about-header" onmouseover="show()"> 
+				<div class = "about-header" onmouseover=""> 
 					<h2 class = "header-text" id="header-text">About Me</h2>
 				</div>
 				<div class="flexbox-row">
@@ -44,8 +46,14 @@
 							<h3 class = "skill-text" id="skill-header-text">Skills</h3>
 							<h3 class = "skill-text alt" id="skill-header-info">Below are some of my web developer skills: </h3>
 						</div>
-						<div class="skill-item"><h3 class = "skill-text">Front End</h3></div>
-						<div class="skill-item"><h3 class = "skill-text">Back End</h3></div>
+						<div class="skill-item">
+							<h3 class = "skill-text">Front End</h3>
+							<h3 class = "skill-text alt" id="skill-frontend-info">CSS, HTML, Javascript, JQuery</h3>
+						</div>
+						<div class="skill-item">
+							<h3 class = "skill-text">Back End</h3>
+							<h3 class = "skill-text alt"id="skill-backend-info">Node.js, PHP, SQL, Python</h3>
+						</div>
 						<div class="skill-item"><h3 class = "skill-text">Other</h3>	<h3 class = "skill-text alt">Hard: Git, Figma, iMovie. Soft: Teamwork, Adaptability</h3></div>
 
 					</div>
@@ -67,26 +75,41 @@
 				</div>
 			</div>
 		</scroll-page>
-		<scroll-page class= "flex-container" id ="projects-page"></scroll-page>
-		<!-- <scroll-page class= "flex-container" id ="project-page"></scroll-page> -->
+		<scroll-page class= "flex-container" id ="projects-page">
+			<div class = "project-panel" id="video-valet"></div>
+			<div class = "project-panel" id="bit-project"></div>
+			<div class = "project-panel" id="fiu"></div>
+		</scroll-page>
+		<scroll-page class= "flex-container" id ="contactme-page">
+		</scroll-page>
 	</scroll-behavior>
 	
 	
 	<script>
+		if (document.getElementById("bio").style.width <= "20vw"){
+			document.getElementById("bio-info").style.display= "none !important";
+			// document.getElementById("bio-info").setAttribute('style', 'display: none !important');
+			console.log("true");
+		}
+		
 		function showSkillText(){
-			document.getElementById("skill-header-info").style.display= "block";
+			document.getElementById("bio").style.width = "15vw";
+			
 			setTimeout(function(){ 
-				document.getElementById("bio").style.width = "15vw";
-			}, 0);
+				document.getElementById("skill-header-info").style.display= "block";
+				
+			}, 400);
 		}
 		function hideSkillText(){
 			setTimeout(function(){ 
-			// document.getElementById("bio-label").translateY="1000";
-		}, 3000);
+				document.getElementById("bio").style.width = "20vw";
+				document.getElementById("skill-header-info").style.display= "none";
+			}, 0);
 		}
 		function showBioText(){
 			setTimeout(function(){ 
 				document.getElementById("skill-column").style.width = "10vw";
+				document.getElementById("bio").style.width = "50vw";
 			}, 0);
 			setTimeout(function(){ 
 				document.getElementById("bio-info").style.display= "block";
@@ -97,6 +120,7 @@
 				document.getElementById("skill-column").style.width = "20vw";
 			}, 0);
 			document.getElementById("bio-info").style.display= "none";
+			document.getElementById("bio").style.width = "20vw";
 		}
 		function displayElement(element){
 			document.getElementById(element).style.display = "flex";
