@@ -86,8 +86,15 @@
 	
 	
 	<script>
+		window.onbeforeunload = function () {
+			window.scroll({
+				top: 0, 
+				left: 0, 
+				behavior: 'smooth'
+			});
+		}
 		if (document.getElementById("bio").style.width <= "20vw"){
-			document.getElementById("bio-info").style.display= "none !important";
+			document.getElementById("bio-info").style.display= "none";
 			// document.getElementById("bio-info").setAttribute('style', 'display: none !important');
 			console.log("true");
 		}
