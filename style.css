@@ -46,7 +46,7 @@ a {
   color: black;
 }
 #home-page{
-  background: url(./backgrounds/plain.jpg);
+  background-color: #E3E3E3;
   background-repeat: no-repeat;
   background-position: top;
   background-size: 100%;
