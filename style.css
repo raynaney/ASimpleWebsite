@@ -24,6 +24,9 @@ body {
   height: 100%;
   scroll-behavior: smooth;
 }
+* {
+  -webkit-overflow-scrolling: touch;
+}
 body {
   font-family: "Oswald", sans-serif;
   font-family: "Courier Prime", monospace;
