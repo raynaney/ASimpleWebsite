@@ -58,6 +58,7 @@ a {
   align-items: center;
   background-image: url(./backgrounds/plain-grey.jpg);
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .text-container {
@@ -117,10 +118,10 @@ a {
 
 
 #project {
-  background-image: url(./backgrounds/brick.jpg);
+  background-image: url(./backgrounds/plain-grey.jpg);
   background-repeat: no-repeat;
-  background-size: 200px;
   background-position: center;
+  background-size: 700px;
 }
 #resume {
   background-image: url(./backgrounds/color\ wall.jpg);
@@ -145,69 +146,19 @@ a {
   font-size: 23px;
 }
 #aboutme-page {
-  background: linear-gradient(
-      to top,
-      rgba(255, 255, 255, 0) 85%,
-      rgb(229 229 229)
-    ),
-    url(./backgrounds/color\ wall.jpg);
+  background: url(./backgrounds/color\ wall.jpg);
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 100%;
   height: 100vh;
   align-items: center;
 }
 
-.about-header {
-  background-image: url(./backgrounds/paperbackground.jpg);
-  padding-top: 2%;
-  padding-bottom: 2%;
-  align-items: center;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.55);
-  width: 30%;
-}
 
-.header-text {
-  font-family: "Oswald", sans-serif;
-  font-size: 35px;
-}
-
-.flexbox-column {
-  display: flex;
-  flex-direction: column;
-  width: 40vh;
-  /* justify-content: space-evenly; */
-}
-
-.flexbox-row {
-  display: flex;
-  flex-direction: row;
-  width: 80vw;
-  /* height: 38vh; */
-  justify-content: space-evenly;
-}
-
-.skill-item {
-  background-image: url(./backgrounds/paperbackground.jpg);
-  width: 100%;
-  padding-top: 8.5%;
-  padding-bottom: 8.5%;
-  margin-top: 4.6%;
-  margin-bottom: 4.6%;
-  align-items: center;
-  border-radius: 15px;
-  display: flex;
-  justify-self: center;
-  justify-content: center;
-  box-shadow: inset 0px 3px 3px rgba(0, 0, 0, 0.45);
-}
 .bio {
   flex-direction: column;
   overflow: hidden;
-  background-image: url(./backgrounds/paperbackground.jpg);
+  background-color: #ffffff;
   align-items: center;
   border-radius: 15px;
   display: flex;
@@ -215,10 +166,17 @@ a {
   justify-self: center;
   justify-content: center;
   box-shadow: inset 0px 3px 3px rgba(0, 0, 0, 0.45);
-  padding-top: 19%;
-  padding-bottom: 19%;
-  padding-right: 15%;
-  padding-left: 15%;
+  max-width: 86vw;
+  padding: 4% 3%;
+  /* background-attachment: fixed; */
+}
+
+#bio-info{
+  line-height: 1.2;
+}
+
+.title{
+  font-size: 20px;
 }
 
 #bio-sub-label {
@@ -243,10 +201,10 @@ a {
 
 #project:hover {
   -webkit-transition: background-position 1s ease;
-  background-size: 300px;
+  background-size: 1000px;
   position: relative;
   animation-delay: 0s;
-  -webkit-transition-duration: 0.5s;
+  -webkit-transition-duration: 0.3s;
   -webkit-transition-property: all;
   -webkit-transition-timing-function: ease-in-out;
 }
@@ -255,7 +213,7 @@ a {
   background-size: 400px;
   position: relative;
   animation-delay: 0s;
-  -webkit-transition-duration: 0.5s;
+  -webkit-transition-duration: 0.3s;
   -webkit-transition-property: all;
   -webkit-transition-timing-function: ease-in-out;
 }
@@ -264,7 +222,7 @@ a {
   background-size: 400px;
   position: relative;
   animation-delay: 0s;
-  -webkit-transition-duration: 0.5s;
+  -webkit-transition-duration: 0.3s;
   -webkit-transition-property: all;
   -webkit-transition-timing-function: ease-in-out;
 }
@@ -550,20 +508,7 @@ div#contact {
     opacity: 0;
   }
 }
-#bio-info {
-  display: none;
-}
 
-.bio:hover #bio-info {
-  animation-name: slide-in-top;
-  animation-duration: 1s;
-  animation-timing-function: ease;
-  animation-delay: 0s;
-  animation-iteration-count: 1;
-  animation-direction: normal;
-  animation-fill-mode: none;
-  animation-fill-mode: forwards;
-}
 
 @keyframes slide-in-top {
   0% {
@@ -708,13 +653,15 @@ div#contact {
 
 /* =================== PROJECTS PAGE =====================*/
 #projects-page {
-  background: url(./backgrounds/brick.jpg);
   background-repeat: no-repeat;
   background-position: top;
   background-size: 100%;
   height: 100vh;
   align-items: center;
   flex-direction: row;
+  background-image: url(./backgrounds/plain-grey.jpg);
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .project-panel{

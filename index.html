@@ -40,40 +40,27 @@
 		<scroll-page class= "flex-container" id ="aboutme-page">
 			<!--  on hover, have colorful lines raditing from header box -->
 			 <div class = outer-container>
-				<div class = "about-header" onmouseover=""> 
-					<h2 class = "header-text" id="header-text">About Me</h2>
-				</div>
-				<div class="flexbox-row">
-					<div class="flexbox-column" id="skill-column">
-						<div class="skill-item" id ="skill-header" onmouseenter="showSkillText()"  onmouseleave="hideSkillText()">
-							<h3 class = "skill-text" id="skill-header-text">Skills</h3>
-							<h3 class = "skill-text alt" id="skill-header-info">Below are some of my web developer skills: </h3>
-						</div>
-						<div class="skill-item">
-							<h3 class = "skill-text">Front End</h3>
-							<h3 class = "skill-text alt" id="skill-frontend-info">CSS, HTML, Javascript, JQuery</h3>
-						</div>
-						<div class="skill-item">
-							<h3 class = "skill-text">Back End</h3>
-							<h3 class = "skill-text alt"id="skill-backend-info">Node.js, PHP, SQL, Python</h3>
-						</div>
-						<div class="skill-item"><h3 class = "skill-text">Other</h3>	<h3 class = "skill-text alt">Hard: Git, Figma, iMovie. Soft: Teamwork, Adaptability</h3></div>
-
-					</div>
-					<div class="bio" id="bio" onmouseenter="showBioText()"  onmouseleave="hideBioText()">
-						<h3  id="bio-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-							sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-							ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-							in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-							sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-							mollit anim id est laborum. orem ipsum dolor sit amet, consectetur adipiscing elit, 
-							sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-						    ut aliquip ex ea commodo consequat.</h3>
-						<h3 class = "skill-text" id="bio-label">Bio</h3>
-						<div  id="bio-sub-label">(see more)</div>
-
+					<div class="bio" id="bio">
+						<h3  id="bio-info"> <span class="title">About me:</span><br />
+							> I am a freelance web developer and graphic designer based in LA.<br />
+							<br />
+							<span class="title">Stack:</span><br />
+							> HTML, CSS, & Javacsript; Node.js; Express; SQL.</span><br />
+							<br />
+							<span class="title">Other Technical Skills:</span><br />
+							 > JQuery, PHP, Python, Figma, iMovie.</span><br />
+							<br />
+							<span class="title">Education:</span><br />
+							 > Major: Computational Cognitive Science<br />
+							 > Minor: Computer Science<br />
+							 > @ UC Davis.<br />
+							<br />
+							<span class="title">Current Interests:</span><br />
+							 > Fullstack web development, based anywhere. Open to remote or in person.<br />
+							 <br />
+							 <span class="title">Hobbies:</span><br />
+							  > Ceramics and jogging. <br />
+						  </h3>
 					</div>
 				</div>
 			</div>
@@ -96,107 +83,6 @@
 				behavior: 'smooth'
 			});
 		}
-		if (document.getElementById("bio").style.width <= "20vw"){
-			document.getElementById("bio-info").style.display= "none";
-			// document.getElementById("bio-info").setAttribute('style', 'display: none !important');
-			console.log("true");
-		}
-		
-		function showSkillText(){
-			// document.getElementById("bio").style.width = "15vw";
-			
-			setTimeout(function(){ 
-				document.getElementById("skill-header-info").style.display= "block";
-				
-			}, 400);
-		}
-		function hideSkillText(){
-			setTimeout(function(){ 
-				// document.getElementById("bio").style.width = "20vw";
-				document.getElementById("skill-header-info").style.display= "none";
-			}, 0);
-		}
-		function showBioText(){
-			setTimeout(function(){ 
-				// document.getElementById("skill-column").style.width = "10vw";
-				// document.getElementById("bio").style.width = "50vw";
-			}, 0);
-			setTimeout(function(){ 
-				document.getElementById("bio-info").style.display= "block";
-			}, 300);
-		}
-		function hideBioText(){
-			setTimeout(function(){ 
-				// document.getElementById("skill-column").style.width = "20vw";
-			}, 0);
-			document.getElementById("bio-info").style.display= "none";
-			// document.getElementById("bio").style.width = "20vw";
-		}
-		function displayElement(element){
-			document.getElementById(element).style.display = "flex";
-		}
-
-		function hide(element){
-			document.getElementById(element).style.display = "none";
-		}
-
-		function displayElements(){
-			//display elements as expanding from 0 to proper size, growing blob effect
-
-		}
-		function expandCircleContact() {
-			document.getElementById("contact-text").classList.add("hidden");
-			document.getElementById("contact").classList.add("full-page-circle");
-			document.getElementById("contact").style.margin = "0";
-			document.getElementById("contact").style.backgroundSize = "100%";
-			document.getElementById("circle-container").style.margin = "0";
-			hideRestofPageLeft("text-container");
-			hideRestofPageLeft("resume");
-			hideRestofPageLeft("project");
-			document.getElementById("contact").classList.add("slide-left");
-			setTimeout(function(){ 
-				document.getElementById(element).style.visibility = "hidden";
-		}, 500);
-		};
-
-		function expandCircleResume() {
-			document.getElementById("resume-text").classList.add("hidden");
-			document.getElementById("resume").classList.add("full-page-circle");
-			document.getElementById("resume").style.margin = "0";
-			document.getElementById("resume").style.backgroundSize = "100%";
-			document.getElementById("circle-container").style.margin = "0";
-			hideRestofPageUp("text-container");
-			hideRestofPageLeft("project");
-			hideRestofPageRight("contact");
-			setTimeout(function(){ 
-				document.getElementById(element).style.visibility = "hidden";
-		}, 500);
-		};
-
-		function hideRestofPageLeft(element){
-			document.getElementById(element).classList.add("slide-left");
-			setTimeout(function(){ 
-				document.getElementById(element).style.display = "none";
-			}, 500);
-		};
-
-		function hideRestofPageRight(element){
-			document.getElementById(element).classList.add("slide-right");
-			setTimeout(function(){ 
-				document.getElementById(element).style.display = "none";
-			}, 500);
-		}
-
-		function hideRestofPageUp(element){
-			document.getElementById(element).classList.add("slide-up");
-			setTimeout(function(){ 
-				document.getElementById(element).style.display = "none";
-			}, 500);
-		};
-		
-		// function addResumeContents(){
-
-		// }
 	</script>
 </body>
 
