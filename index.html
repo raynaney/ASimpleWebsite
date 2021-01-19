@@ -17,14 +17,16 @@
 				<h5>(A Web Developer)</h5>
 			</div>
 			<div class="circle-container" id="circle-container">
+				<a href="#aboutme-page" onclick='displayPage("aboutme-page")'>
+					<div class = "Outercircle" id="" >
+						<div class = "circle" id="resume" >
+							<div class = "fixed-text" id="resume-text"> about me </div>
+						</div>
+					</div>
+				</a>
 				<a href="#projects-page" onclick='displayPage("projects-page")'>
 					<div class = "circle" id="project">
 						<div class = "fixed-text" id="project-text"> projects </div>
-					</div>
-				</a>
-				<a href="#aboutme-page" onclick='displayPage("aboutme-page")'>
-					<div class = "circle" id="resume" >
-						<div class = "fixed-text" id="resume-text"> about me </div>
 					</div>
 				</a>
 				<a href="#contactme-page">
@@ -33,6 +35,7 @@
 					</div>
 				</a>
 			</div>
+			<img class="dice" src="./backgrounds/dice.png"></img>
 		</scroll-page>
 		<scroll-page class= "flex-container" id ="aboutme-page">
 			<!--  on hover, have colorful lines raditing from header box -->
@@ -100,7 +103,7 @@
 		}
 		
 		function showSkillText(){
-			document.getElementById("bio").style.width = "15vw";
+			// document.getElementById("bio").style.width = "15vw";
 			
 			setTimeout(function(){ 
 				document.getElementById("skill-header-info").style.display= "block";
@@ -109,14 +112,14 @@
 		}
 		function hideSkillText(){
 			setTimeout(function(){ 
-				document.getElementById("bio").style.width = "20vw";
+				// document.getElementById("bio").style.width = "20vw";
 				document.getElementById("skill-header-info").style.display= "none";
 			}, 0);
 		}
 		function showBioText(){
 			setTimeout(function(){ 
-				document.getElementById("skill-column").style.width = "10vw";
-				document.getElementById("bio").style.width = "50vw";
+				// document.getElementById("skill-column").style.width = "10vw";
+				// document.getElementById("bio").style.width = "50vw";
 			}, 0);
 			setTimeout(function(){ 
 				document.getElementById("bio-info").style.display= "block";
@@ -124,10 +127,10 @@
 		}
 		function hideBioText(){
 			setTimeout(function(){ 
-				document.getElementById("skill-column").style.width = "20vw";
+				// document.getElementById("skill-column").style.width = "20vw";
 			}, 0);
 			document.getElementById("bio-info").style.display= "none";
-			document.getElementById("bio").style.width = "20vw";
+			// document.getElementById("bio").style.width = "20vw";
 		}
 		function displayElement(element){
 			document.getElementById(element).style.display = "flex";
