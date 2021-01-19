@@ -89,9 +89,10 @@ a {
   align-items: center;
   align-self: center;
   display: flex;
-  height: 100vh;
   justify-content: space-evenly;
-  flex-direction: column;
+  flex-direction: row;
+  height: 70vh;
+  width: 100vw;
 }
 
 .circle-container {
@@ -166,9 +167,26 @@ a {
   justify-self: center;
   justify-content: center;
   box-shadow: inset 0px 3px 3px rgba(0, 0, 0, 0.45);
-  max-width: 86vw;
   padding: 4% 3%;
   /* background-attachment: fixed; */
+}
+
+#bio{
+  max-width: 56vw;
+  min-height: 55vh;
+}
+
+#pic{
+  /* background-image: url(./backgrounds/me_img.png);
+  background-size: 176px;
+  background-repeat: no-repeat; */
+  min-height: 55vh;
+  max-width: 20vw;
+}
+
+.my-img{
+  height: 400px;
+  /* width: 300px; */
 }
 
 #bio-info{
@@ -701,7 +719,7 @@ div#contact {
   background: url(./backgrounds/brick\ 2.jpg);
   background-repeat: no-repeat;
   background-position: top;
-  background-size: 100%;
+  background-size: cover;
   height: 100vh;
   align-items: center;
 }
