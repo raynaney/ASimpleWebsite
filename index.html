@@ -17,14 +17,14 @@
 				<h5>(A Web Developer)</h5>
 			</div>
 			<div class="circle-container" id="circle-container">
-				<a href="#aboutme-page" onclick='displayPage("aboutme-page")'>
+				<a href="#aboutme-page">
 					<div class = "Outercircle" id="" >
 						<div class = "circle" id="resume" >
 							<div class = "fixed-text" id="resume-text"> about me </div>
 						</div>
 					</div>
 				</a>
-				<a href="#projects-page" onclick='displayPage("projects-page")'>
+				<a href="#projects-page">
 					<div class = "circle" id="project">
 						<div class = "fixed-text" id="project-text"> projects </div>
 					</div>
@@ -38,14 +38,25 @@
 			<img class="dice" src="./backgrounds/dice.png"></img>
 		</scroll-page>
 		<scroll-page class= "flex-container" id ="aboutme-page">
-			<!--  on hover, have colorful lines raditing from header box -->
+			<div class="header-container" id="header-placeholder"></div>
+			<div class="header-container" id="header-container">
+				<div class="header" id="header">
+					<a href="#home-page" id="home_url"><img class="main-logo" src="./backgrounds/transparentSquareLogo.png"></a>
+					<!-- <img class="main-logo" src="./backgrounds/transparentSquareLogo.png"> -->
+					<ul class="menu-items">
+						<a href="#aboutme-page"><li><h6>ABOUT ME</h6></li></a>
+						<a href="#projects-page"><li><h6>PROJECTS</h6></li></a>
+						<a href="#contactme-page"><li><h6>CONTACT</h6></li></a>
+					</ul>
+				</div>
+			</div>
 			 <div class = outer-container>
 				<div class="bio" id="pic">
-					<img class="my-img" src="./backgrounds/me_img.png"></img>
+					<img class="my-img" src="./backgrounds/me_img.png">
 				</div>
 					<div class="bio" id="bio">
 						<h3  id="bio-info"> <span class="title">About me:</span><br />
-							> I am a freelance web developer and graphic designer based in LA.<br />
+							> I am a <!-- freelance -->web developer and graphic designer based in LA.<br />
 							<br />
 							<span class="title">Stack:</span><br />
 							> HTML, CSS, & Javacsript; Node.js; Express; SQL.</span><br />
@@ -59,10 +70,11 @@
 							 > @ UC Davis.<br />
 							<br />
 							<span class="title">Current Interests:</span><br />
-							 > Fullstack web development, based anywhere. Open to remote or in person.<br />
+							 <!-- > Fullstack web development, based anywhere. Open to remote or in person.<br /> -->
+							 > Continuing my education through grad school.<br />
 							 <br />
 							 <span class="title">Hobbies:</span><br />
-							  > Ceramics and jogging. <br />
+							  > Ceramics and biking. <br />
 						  </h3>
 					</div>
 				</div>
@@ -74,6 +86,18 @@
 			<div class = "project-panel" id="fiu"></div>
 		</scroll-page>
 		<scroll-page class= "flex-container" id ="contactme-page">
+			<div class="contact-container">
+				<h1 class = "main-title">GET IN TOUCH</h1>
+				<div class ="lower-container">
+					<textarea id="message" name="message" placeholder="Message.."></textarea>
+					<div class="input-column">
+						<div class="basic-input" id="name"></div>
+						<div class="basic-input" id="email"></div>
+						<div class="icon-row">
+						</div>
+					</div>
+				</div>
+			</div>
 		</scroll-page> 
 	</scroll-behavior>
 	
@@ -85,6 +109,20 @@
 				left: 0, 
 				behavior: 'smooth'
 			});
+		}
+		window.onscroll = function() {myFunction()};
+
+		var header = document.getElementById("header-container");
+		var sticky = header.offsetTop;
+
+		function myFunction() {
+		if (window.pageYOffset > sticky) {
+			header.classList.add("sticky");
+			document.getElementById("header-placeholder").style.display = "block";
+		} else {
+			document.getElementById("header-placeholder").style.display = "none";
+			header.classList.remove("sticky");
+			}
 		}
 	</script>
 </body>
